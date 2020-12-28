@@ -22,7 +22,7 @@
 function printAndGetHighScore (scores) {
    var highScore = 0;
    var output;
-   for (var i = 0; i < scores.length; i++) {
+  for (var i = 0; i < scores.length; i++) {
     output = "Bubble solution #" + i + " score: " + scores[i];
     console.log(output);
     if (scores [i] > highScore) {
@@ -30,7 +30,7 @@ function printAndGetHighScore (scores) {
     }
   }
     return highScore;
-   }
+}
 
 function getBestResults (scores, highScore) {
    var bestSolutions = [];
@@ -40,28 +40,29 @@ function getBestResults (scores, highScore) {
     }
    }
     return bestSolutions;
-  }
-   var highScore = printAndGetHighScore (scores);
+}
+
+var highScore = printAndGetHighScore (scores);
    console.log ("Bubbles tests: " + scores.length);
    console.log ("Highest bubble score: " + highScore);
 
   var bestSolutions = getBestResults(scores, highScore);
   console.log("Solutions with the highest score: " + bestSolutions);
 
- function getMostCostEffectiveSolution (scores, costs, highScore) {
+function getMostCostEffectiveSolution (scores, costs, highscore) {
   var cost = 100;
   var index;
   for (var i = 0; i < scores.length; i++) {
-    if (scores [i] == highScore);
-     if (costs [i] < cost) {
-      index = scores [i]; cost = costs [i];
+    if (scores [i] == highscore);
+     if (cost > costs [i]) {
+      index = i; cost = costs [i];
     }
   }
- }
   return index;
 }
+
 var mostCostEffectiveSolution = getMostCostEffectiveSolution (scores, costs, highScore);
- console.log ("Bubble Solution #" + mostCostEffectiveSolution + " is the most cost effective");
+console.log ("Bubble Solution #" + mostCostEffectiveSolution + " is the most cost effective");
 
  </script>
  </head>
